@@ -41,6 +41,8 @@ app.use(session({
 }));
 app.use(cors())
 
+console.log("Path to React: ", path.resolve(__dirname, '../client/build'));
+
 // Have Node serve the files for our built React app
 app.use(express.static(path.resolve(__dirname, '../client/build')));
 
