@@ -63,7 +63,7 @@ const UpdateRecipe = ({ id, setEditRecipe, setActiveContent }) => {
             </div>
             <div className="form-field">
                 <label>Ingredients</label>
-                <input className="field" type="text" defaultValue={recipe.ingredients} onBlur={(e) => updateData({ingredients: e.target.value})} />
+                <textarea rows="5" cols="30" className="field" type="text" defaultValue={recipe.ingredients} onBlur={(e) => updateData({ingredients: e.target.value})} />
             </div>
             <div className="form-field">
                 <label>Flavor Profile</label>
@@ -79,7 +79,7 @@ const UpdateRecipe = ({ id, setEditRecipe, setActiveContent }) => {
             </div>
             <div className="form-field">
                 <label>Instructions</label>
-                <input className="field" type="text" defaultValue={recipe.instructions} onBlur={(e) => updateData({instructions: e.target.value})} />
+                <textarea rows="5" cols="30" className="field" type="text" defaultValue={recipe.instructions} onBlur={(e) => updateData({instructions: e.target.value})} />
             </div>
             <div>
                 <button>Update Recipe</button>

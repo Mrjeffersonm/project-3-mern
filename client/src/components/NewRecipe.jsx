@@ -55,7 +55,7 @@ const NewRecipe= () => {
             </div>
             <div className="form-field">
                 <label>Ingredients</label>
-                <input className="field" type="text"  onBlur={(e) => setIngredients(e.target.value)} />
+                <textarea className="field" rows="5" cols="30" type="text"  onBlur={(e) => setIngredients(e.target.value)} />
             </div>
             <div className="form-field">
                 <label>Flavor Profile</label>
@@ -71,7 +71,7 @@ const NewRecipe= () => {
             </div>
             <div className="form-field">
                 <label>Instructions</label>
-                <input className="field" type="text" onBlur={(e) => setInstructions(e.target.value)} />
+                <textarea className="field" rows="5" cols="30" type="text" onBlur={(e) => setInstructions(e.target.value)} />
             </div>
             <div>
                 <button>Add Recipe</button>

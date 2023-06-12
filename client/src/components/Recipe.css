@@ -14,16 +14,30 @@
 } */
 
 .info-bar {
-    background-color: rgb(172, 177, 180);
+    background-color: rgb(250, 240, 186);
+    height: 30px;
 }
 
-.info-bar>div {
+.recipe-name {
+    float: left;
+    margin-left: 5px;
+    font-weight: bold;
+}
+
+.user-name {
+    float: right;
+    padding-right: 5px;
+}
+
+.info-bar > div {
     display: inline-block;
     margin: 5px;
     font-size: large;
 }
 
-
+.recipe-data {
+    clear: both;
+}
 
 .label {
     width: 200px;
