@@ -51,27 +51,27 @@ const NewRecipe= () => {
         <form className="add-recipe-form" onSubmit={e => addRecipe(e)}>
             <div className="form-field">
                 <label>Recipe Name</label>
-                <input className="field" type="text" onBlur={(e) => setRecipeName(e.target.value)} />
+                <input className="field" type="text" onBlur={(e) => setRecipeName(e.target.value)} required/>
             </div>
             <div className="form-field">
                 <label>Ingredients</label>
-                <textarea className="field" rows="5" cols="30" type="text"  onBlur={(e) => setIngredients(e.target.value)} />
+                <textarea className="field" rows="5" cols="30" type="text"  onBlur={(e) => setIngredients(e.target.value)} required/>
             </div>
             <div className="form-field">
                 <label>Flavor Profile</label>
-                <input className="field" type="text" onBlur={(e) => setFlavorProfile(e.target.value)} />
+                <input className="field" type="text" onBlur={(e) => setFlavorProfile(e.target.value)} required/>
             </div>
             <div className="form-field">
                 <label>Prep Time</label>
-                <input className="field" type="text" onBlur={(e) => setPrepTime(e.target.value)} />
+                <input className="field" type="text" onBlur={(e) => setPrepTime(e.target.value)} required/>
             </div>
             <div className="form-field">
                 <label>Cook Time</label>
-                <input className="field" type="text" onBlur={(e) => setCookTime(e.target.value)} />
+                <input className="field" type="text" onBlur={(e) => setCookTime(e.target.value)} required/>
             </div>
             <div className="form-field">
                 <label>Instructions</label>
-                <textarea className="field" rows="5" cols="30" type="text" onBlur={(e) => setInstructions(e.target.value)} />
+                <textarea className="field" rows="5" cols="30" type="text" onBlur={(e) => setInstructions(e.target.value)} required/>
             </div>
             <div>
                 <button>Add Recipe</button>

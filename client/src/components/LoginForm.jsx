@@ -47,11 +47,11 @@ const LoginForm = ({ setUser, setActiveContent }) => {
         <form className="login-form" onSubmit={e => login(e)}>
             <div className="form-field">
                 <label>Username</label>
-                <input type="text" onBlur={(e) => setUserName(e.target.value)} />
+                <input type="text" onBlur={(e) => setUserName(e.target.value)} required/>
             </div>
             <div className="form-field">
                 <label>Password</label>
-                <input type="password" onBlur={(e) => setPassword(e.target.value)} />
+                <input type="password" onBlur={(e) => setPassword(e.target.value)} required/>
             </div>
             <div>
                 <button>Login</button>
