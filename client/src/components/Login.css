@@ -1,0 +1,13 @@
+.login-form {
+    text-align:center;
+}
+
+button {
+    background-color: rgb(162, 113, 218);
+    color: rgb(188, 226, 84);
+    margin: 10px;
+}
+
+.form-field {
+    margin: 5px;
+}

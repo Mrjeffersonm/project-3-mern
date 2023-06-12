@@ -1,10 +1,12 @@
 import { LIST_RECIPES } from "../gql/queries";
+import { DELETE_RECIPE } from "../gql/mutations";
+import './RecipeList.css';
 import Recipe from "./Recipe";
 const { useQuery } = require("@apollo/client");
 const { useState } = require("react");
 
 
-const RecipeList = (props) => {
+const RecipeList = ({ setEditRecipe, setActiveContent }) => {
     const { loading, error, data } = useQuery(LIST_RECIPES);
 
     if (loading) {
@@ -22,7 +24,7 @@ const RecipeList = (props) => {
     const recipes = data.getAllRecipes;
 
     const rendered = recipes.map(recipe => {
-        return <Recipe recipe={recipe} key={recipe.id}/>
+        return <Recipe recipe={recipe} key={recipe.id} setEditRecipe={setEditRecipe} setActiveContent={setActiveContent}/>
     });
     return (
         <div className="recipe-list-content">

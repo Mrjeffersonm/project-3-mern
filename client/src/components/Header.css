@@ -1,0 +1,11 @@
+.header {
+    display: flex;
+    padding: 20px;
+    background-image: linear-gradient(to right, rgb(180, 97, 236),rgb(146, 136, 231), rgb(186, 157, 206));
+    font-size: large;
+    width: auto;
+}
+
+.title {
+    display: inline-block;
+}

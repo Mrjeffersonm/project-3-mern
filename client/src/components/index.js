@@ -2,12 +2,20 @@ import LoginForm from "./LoginForm";
 import RecipeList from "./RecipeList";
 import Recipe from "./Recipe";
 import NewRecipe from "./NewRecipe";
-import Logout from "./Logout";
+import NewUserForm from "./NewUser";
+import UpdateRecipe from "./UpdateRecipe";
+import Header from "./Header";
+import Navigation from "./Navigation";
+import Content from "./Content";
 
 export {
     LoginForm,
     RecipeList,
     Recipe,
     NewRecipe,
-    Logout,
+    NewUserForm,
+    UpdateRecipe,
+    Header,
+    Navigation,
+    Content
 }

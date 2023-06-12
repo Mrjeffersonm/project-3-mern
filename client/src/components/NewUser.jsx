@@ -1,17 +1,17 @@
-import { LOGIN } from "../gql/mutations";
+import { NEW_USER } from "../gql/mutations";
 import { LIST_RECIPES } from "../gql/queries";
-import './Login.css';
+import './NewUser.css';
 const { useMutation } = require("@apollo/client");
 const { useState } = require("react");
 
-const LoginForm = ({ setUser, setActiveContent }) => {
+const NewUserForm = ({ setUser, setActiveContent }) => {
     const [userName, setUserName] = useState('');
     const [password, setPassword] = useState('');
-    const [loginFunction, { loading, error, data }] = useMutation(LOGIN);
+    const [newUserFunction, { loading, error, data }] = useMutation(NEW_USER);
 
     if (loading) {
         return (
-            <p>Logging in...</p>
+            <p>Creating Account...</p>
         );
     }
 
@@ -21,17 +21,17 @@ const LoginForm = ({ setUser, setActiveContent }) => {
         );
     }
 
-    function login(event) {
+    function newUser(event) {
         event.preventDefault();
 
-        loginFunction({ 
+        newUserFunction({
             variables: {
                 name: userName,
-                password: password,
+                password: password
             },
             onCompleted: data => {
-                setUser(data.login);
-                setActiveContent('home')
+                setUser(data.addUser);
+                setActiveContent('home');
             },
             refetchQueries: [
                 {
@@ -42,22 +42,21 @@ const LoginForm = ({ setUser, setActiveContent }) => {
     }
 
     return (
-        <form className="login-form" onSubmit={e => login(e)}>
+        <form className="new-user-form" onSubmit={e => newUser(e)}>
             <div className="form-field">
                 <label>Username</label>
-                <input type="text" onBlur={(e) => setUserName(e.target.value)} />
+                <input type="text" onBlur={(e) => setUserName(e.target.value)} required/>
             </div>
             <div className="form-field">
                 <label>Password</label>
-                <input type="password" onBlur={(e) => setPassword(e.target.value)} />
+                <input type="password" onBlur={(e) => setPassword(e.target.value)} required/>
             </div>
             <div>
-                <button>Login</button>
-                <button className="new-user" onClick={_ => setActiveContent('new-user')}>Create Account</button>
+                <button>Create Account</button>
+                <button className="login" onClick={_ => setActiveContent('login')}>Login Instead</button>
             </div>
         </form>
     )
+};
 
-}
-
-export default LoginForm;
+export default NewUserForm;

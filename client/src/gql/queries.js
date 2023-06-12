@@ -17,6 +17,29 @@ const LIST_RECIPES = gql`
     }
 `;
 
+const GET_RECIPE = gql`
+    query getRecipeById($id: ID!) {
+        getRecipeById(id: $id) {
+            id
+            recipe_name
+            ingredients
+            flavor_profile
+            prep_time
+            cook_time
+            instructions
+        }    
+    }
+`
+const GET_USER = gql`
+   query {
+	getUser {
+		id
+		user_name
+	}
+}
+ `
 export {
     LIST_RECIPES,
+    GET_RECIPE,
+    GET_USER,
 }

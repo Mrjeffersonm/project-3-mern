@@ -19,6 +19,7 @@ const typeDefs = gql`
 
     # Queries
     type Query {
+        getUser: User
         getAllUsers: [User!]
         getRecipeById(id: ID!): Recipe
         getAllRecipes: [Recipe!]
@@ -29,10 +30,23 @@ const typeDefs = gql`
         login(user_name: String!, password: String!): User
         logout: Boolean!
         addUser(user_name: String!, password: String!): User
-        addRecipe(recipe_name: String!, ingredients: String!,
-        flavor_profile: String!, prep_time: Int, cook_time: Int, instructions: String!): Recipe
-        updateRecipe(id: ID!, recipe_name: String, ingredients: String,
-        flavor_profile: String, prep_time: Int, cook_time: Int, instructions: String): Recipe
+        addRecipe(
+            recipe_name: String!, 
+            ingredients: String!,
+            flavor_profile: String!, 
+            prep_time: Int, 
+            cook_time: Int, 
+            instructions: String!
+            ): Recipe
+        updateRecipe(
+            id: ID!, 
+            recipe_name: String, 
+            ingredients: String,
+            flavor_profile: String, 
+            prep_time: Int, 
+            cook_time: Int, 
+            instructions: String
+            ): Recipe
         deleteRecipe(id: ID!): Boolean!
     }
 `

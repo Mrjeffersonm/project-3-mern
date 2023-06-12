@@ -25,6 +25,8 @@ async function userLogin(user_name, password, req) {
 
 async function createUser(user_name, password, req) {
     const user = await User.create({user_name, password});
+    req.session.user = user;
+    req.session.authenticated = true;
     return mapResult(user)
 };
 
@@ -116,6 +118,12 @@ const resolvers = {
                 return null;
             }
             return await getRecipesForUser(req.session.user.id);
+        },
+        async getUser(_, args, req) {
+            if (!req.session.user) {
+                return null;
+            }
+            return mapResult(req.session.user);
         }
     },
     Mutation: {
