@@ -1,5 +1,47 @@
 .recipe {
+
     text-align: center;
+    font-size: large;
+    background-color: antiquewhite;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+/* .recipe > * {
+    margin-left: 3px;
+} */
+
+.info-bar {
+    background-color: rgb(172, 177, 180);
+}
+
+.info-bar>div {
+    display: inline-block;
+    margin: 5px;
     font-size: large;
 }
 
+
+
+.label {
+    width: 200px;
+    text-align: left;
+    margin-right: 5px;
+    font-weight: bold;
+    margin-left: 5px;
+}
+.value {
+    text-align: left;
+    margin-left: 50px;
+}
+
+.edit-bar {
+    text-align: left;
+    margin-left: 10px;
+}
+
+.edit-bar > div {
+    display: inline-block;
+}

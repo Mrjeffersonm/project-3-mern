@@ -1,5 +1,6 @@
 import { GET_RECIPE, LIST_RECIPES } from "../gql/queries";
 import { UPDATE_RECIPE } from "../gql/mutations";
+import './UpdateRecipe.css'
 const { useMutation, useQuery } = require("@apollo/client");
 
 
@@ -58,27 +59,27 @@ const UpdateRecipe = ({ id, setEditRecipe, setActiveContent }) => {
         <form className="update-recipe-form" onSubmit={e => updateRecipe(e)}>
             <div className="form-field">
                 <label>Update Recipe Name</label>
-                <input type="text" defaultValue={recipe.recipe_name} onBlur={(e) => updateData({recipe_name: e.target.value})}/>
+                <input className="field" type="text" defaultValue={recipe.recipe_name} onBlur={(e) => updateData({recipe_name: e.target.value})}/>
             </div>
             <div className="form-field">
                 <label>Ingredients</label>
-                <input type="text" defaultValue={recipe.ingredients} onBlur={(e) => updateData({ingredients: e.target.value})} />
+                <input className="field" type="text" defaultValue={recipe.ingredients} onBlur={(e) => updateData({ingredients: e.target.value})} />
             </div>
             <div className="form-field">
                 <label>Flavor Profile</label>
-                <input type="text" defaultValue={recipe.flavor_profile} onBlur={(e) => updateData({flavor_profile: e.target.value})} />
+                <input className="field" type="text" defaultValue={recipe.flavor_profile} onBlur={(e) => updateData({flavor_profile: e.target.value})} />
             </div>
             <div className="form-field">
                 <label>Prep Time</label>
-                <input type="text" defaultValue={recipe.prep_time} onBlur={(e) => updateData({prep_time: parseInt(e.target.value)})} />
+                <input className="field" type="text" defaultValue={recipe.prep_time} onBlur={(e) => updateData({prep_time: parseInt(e.target.value)})} />
             </div>
             <div className="form-field">
                 <label>Cook Time</label>
-                <input type="text" defaultValue={recipe.cook_time} onBlur={(e) => updateData({cook_time: parseInt(e.target.value)})} />
+                <input className="field" type="text" defaultValue={recipe.cook_time} onBlur={(e) => updateData({cook_time: parseInt(e.target.value)})} />
             </div>
             <div className="form-field">
                 <label>Instructions</label>
-                <input type="text" defaultValue={recipe.instructions} onBlur={(e) => updateData({instructions: e.target.value})} />
+                <input className="field" type="text" defaultValue={recipe.instructions} onBlur={(e) => updateData({instructions: e.target.value})} />
             </div>
             <div>
                 <button>Update Recipe</button>

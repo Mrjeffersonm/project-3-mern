@@ -19,6 +19,7 @@ const Navigation = ({activeContent, setActiveContent, setUser, user}) => {
             ]
         });
     }
+    console.log(user)
     if (!user) {
         return (
             <></>

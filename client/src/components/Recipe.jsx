@@ -45,29 +45,46 @@ const Recipe = ({ recipe, setEditRecipe, setActiveContent }) => {
 
             </div>
             <div className="ingredients">
-                {recipe.ingredients}
+                <div className="label">Ingredients</div>
+                <div className="value">
+                    {recipe.ingredients}
+                </div>
             </div>
             <div className="flavor-profile">
-                {recipe.flavor_profile}
+                <div className="label">Flavor Profile</div>
+                <div className="value">
+                    {recipe.flavor_profile}
+                </div>
             </div>
             <div className="prep-time">
-                {recipe.prep_time}
+                <div className="label">Prep Time</div>
+                <div className="value">
+                    {recipe.prep_time} Minutes
+                </div>
             </div>
             <div className="cook-time">
-                {recipe.cook_time}
+                <div className="label">Cook Time</div>
+                <div className="value">
+                    {recipe.cook_time} Minutes
+                </div>
             </div>
             <div className="instructions">
-                {recipe.instructions}
+                <div className="label">Instructions</div>
+                <div className="value">
+                    {recipe.instructions}
+                </div>
             </div>
-            <div className="edit-recipe">
-                <button onClick={event => {
-                    setEditRecipe(recipe.id);
-                    setActiveContent('edit-recipe');
-                }
-                }>Edit</button>
-            </div>
-            <div className="delete-recipe">
-                <button onClick={event => deleteRecipe(recipe.id)}>Delete</button>
+            <div className="edit-bar">
+                <div className="edit-recipe">
+                    <button onClick={event => {
+                        setEditRecipe(recipe.id);
+                        setActiveContent('edit-recipe');
+                    }
+                    }>Edit</button>
+                </div>
+                <div className="delete-recipe">
+                    <button onClick={event => deleteRecipe(recipe.id)}>Delete</button>
+                </div>
             </div>
         </div>
     )
