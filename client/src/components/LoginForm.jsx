@@ -24,14 +24,16 @@ const LoginForm = ({ setUser, setActiveContent }) => {
     function login(event) {
         event.preventDefault();
 
-        loginFunction({ 
+        loginFunction({
             variables: {
                 name: userName,
                 password: password,
             },
             onCompleted: data => {
                 setUser(data.login);
-                setActiveContent('home')
+                if (data.login) {
+                    setActiveContent('home');
+                }
             },
             refetchQueries: [
                 {
